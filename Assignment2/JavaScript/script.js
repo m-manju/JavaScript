@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 // a. ["1", "2", "3", "4", "5", "6", "7"]
 // nRemove number "6" from the array and console the length of the array.
-const Array = ["1", "2", "3", "4", "5", "6", "7"];
-Array.splice(-2, 1);
-console.log("\nAnswer a", Array);
-const x = Array.length;
+const myArray = ["1", "2", "3", "4", "5", "6", "7"];
+myArray.splice(-2, 1);
+console.log("\nAnswer 1 a", myArray);
+const x = myArray.length;
 console.log("Length after removing '6': ", x);
 
 // b. Convert all the items of the array to data type number and console each items data type,
@@ -26,14 +26,16 @@ console.log(Arr1);
 // the array and also console the sum of all the items ( convert to integer before calculating).
 const Arr2 = ["1", "2", "3", "4", "5", "6", "7"];
 let concatString = "";
+let sum = 0;
 Arr2.forEach((item) => {
   concatString += item;
+  sum += parseInt(item, 10);
 });
-console.log("\nAnswer d- concatenated String ", concatString);
-const Sum = Arr2.reduce((result, item) => result + +item, 0);
-console.log("Sum of all items:", Sum);
+console.log("\nAnswer d- concatenated String:", concatString);
+console.log("sum:", sum);
 
-// e. Filter out item "3" from the array and console the array (use any array method).
+// e. Filter out item "3" from the array and console the array 
+// (use any array method).
 const Arr3 = ["1", "2", "3", "4", "5", "6", "7"];
 const filteredArray = Arr3.filter((item) => item !== "3");
 console.log("\nAnswer e", filteredArray);
@@ -76,7 +78,7 @@ const arr1 = [1, 2, 3, 4, 5];
 const arr2 = ["a", "b", "c", "d", "e"];
 const mergedArray = arr1.concat(arr2);
 console.log("\nAnswer i", mergedArray);
-//
+
 // 2.
 //     *
 //    * *
@@ -84,6 +86,7 @@ console.log("\nAnswer i", mergedArray);
 //  * * * *
 // * * * * *
 // console this(pyramid) star pattern
+console.log("\nAnswer 2");
 const n = 5;
 for (let i = 1; i <= n; i += 1) {
   const space = " ".repeat(n - i);
