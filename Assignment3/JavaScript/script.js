@@ -110,8 +110,8 @@ console.log(updatedObject);
 //8. Given var string = "Javascript is the King of the web."
 // a) Get the length of the string.
 console.log("\nanswer 8 a"); 
-let string = "Javascript is the King of the web.";
-let lengthOfString = string.length;
+let newString = "Javascript is the King of the web.";
+let lengthOfString = newString.length;
 console.log(lengthOfString);
 
 // b) Print the 8th character of the string without using any function. 
