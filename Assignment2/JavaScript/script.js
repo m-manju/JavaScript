@@ -10,9 +10,9 @@ console.log("Length after removing '6': ", x);
 // b. Convert all the items of the array to data type number and console each items data type,
 // use any of the array iteration methods provided by JS for iteration."
 let anArray = ["1", "2", "3", "4", "5", "6", "7"];
-array = anArray.map((item) => Number(item));
-console.log("\nAnswer b", array);
-array.forEach((item) => console.log(typeof item));
+anArray1 = anArray.map((item) => Number(item));
+console.log("\nAnswer b", anArray1);
+anArray1.forEach((item) => console.log(typeof item));
 
 // c. Remove last three items of the array, use JS provided array method, then console the array and
 // then add "one" and "two" (strings) to the beginning of the array and console the array.
