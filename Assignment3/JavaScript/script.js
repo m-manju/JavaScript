@@ -19,39 +19,34 @@ arr.map((item) => {
 
 // 2.[1, 2, 3, 4. 5, 6] : Write a closure function to delete indexes 5 and 2 of this array.
 console.log("\nanswer 2");
-const array = [1, 2, 3, 4, 5, 6];
+const numberArray = [1, 2, 3, 4, 5, 6];
 const deleteIndexes = (indexesToDelete) => {
   return function (arr) {
-    return arr.filter((_, index) => !indexesToDelete.includes(index));
+    return arr.filter((Item, index) => !indexesToDelete.includes(index));
   };
 };
-// Create the closure function to delete indexes 5 and 2
 const deleteIndexesFunction = deleteIndexes([5, 2]);
-// Call the closure function to delete indexes
-const newArray = deleteIndexesFunction(array);
-console.log(newArray); // Output: [1, 3, 4, 6]
+const newArray = deleteIndexesFunction(numberArray);
+console.log(newArray);
 
 
 // 3. Use constructor method to console all elements of the passed array. (the array will be passed to the
 // constructor method)
 console.log("\nanswer 3");
-class ArrayConsoleLogger {
+class ClassNameOfArray {
     constructor(array) {
-      // Check if the input is an array
       if (!Array.isArray(array)) {
-        console.error("Invalid input: Please provide an array.");
+        console.error("Not an array.");
         return;
       }
-      // Loop through the array and console.log each element
       array.forEach((element) => {
         console.log(element);
       });
     }
 }
-// Create an instance of the class and pass an array to it
-const exampleArray = [1, 2, 3, "hello", "world"];
-const logger = new ArrayConsoleLogger(exampleArray);
-console.log(logger);
+const greetArray = [9, 3, 0, "Good", "Morning"];
+// eslint-disable-next-line no-unused-vars
+const passedArray = new ClassNameOfArray(greetArray);
 
 
 // 4.Create a function that takes 2 arguments, 1st argument being any array of items, 2nd being any one
@@ -61,26 +56,18 @@ console.log(logger);
 console.log("\nanswer 4");
 const modifyArray = (arr, item) => {
     const index = arr.indexOf(item);
-  
     if (index !== -1) {
-      // Item exists in the array, so delete it
       arr.splice(index, 1);
-      console.log(`Item "${item}" deleted from the array.`);
+      console.log(`Item "${item}" deleted`);
     } else {
-      // Item does not exist in the array, so insert it
       arr.push(item);
-      console.log(`Item "${item}" inserted into the array.`);
+      console.log(`Item "${item}" inserted`);
     }
-  
-    // Console.log the updated array
     console.log('Updated Array:', arr);
-  };
-  
-  // Example usage:
-  const myArray = ['apple', 'banana', 'orange'];
-  
-  modifyArray(myArray, 'banana');
-  modifyArray(myArray, 'grapes');
+};
+const myArray = ['one', 'two', 'three'];
+modifyArray(myArray, 'two');
+modifyArray(myArray, 'four');
   
 
 // 5. Create a self-invoking function to console you name.
@@ -95,8 +82,8 @@ console.log("\nanswer 5");
 //  Using this object make an array consisting of all the keys of the given object in 
 //  reverse order. (output should be ['q', 'p', 'c', 'f', 'b', 'a'])
 console.log("\nanswer 6");
-const obj = { a: 'one', b: '2', f: '5', c: '33', p: 'do', q: 'one' };
-const keysArray = Object.keys(obj).reverse();
+const newObj = { a: 'one', b: '2', f: '5', c: '33', p: 'do', q: 'one' };
+const keysArray = Object.keys(newObj).reverse();
 console.log(keysArray); 
 
 
@@ -115,72 +102,71 @@ const myObj = {
       { a: 'five', id: '212' }
     ]
 };
-  
 const idToRemove = '24';
 const newData = myObj.data.filter(item => item.id !== idToRemove);
-  
 const updatedObject = { data: newData };
 console.log(updatedObject);
 
-
 //8. Given var string = "Javascript is the King of the web."
-
 // a) Get the length of the string.
 console.log("\nanswer 8 a"); 
-var string = "Javascript is the King of the web.";
-var lengthOfString = string.length;
+let string = "Javascript is the King of the web.";
+let lengthOfString = string.length;
 console.log(lengthOfString);
 
 // b) Print the 8th character of the string without using any function. 
 console.log("\nanswer 8 b"); 
-var myString = "Javascript is the King of the web.";
-var eighthCharacter = myString[7];
+let myString = "Javascript is the King of the web.";
+let eighthCharacter = myString[7];
 console.log(eighthCharacter);
 
 // c) Execute the above code from browser console.
-console.log("\nanswer 8 c");  
+console.log("\nanswer 8 c"); 
+console.log(" ")
 
 // d) Get the position of the word "King" in string. 
 console.log("\nanswer 8 d"); 
-var theString = "Javascript is the King of the web.";
-var positionOfKing = theString.indexOf("King");
+let theString = "Javascript is the King of the web.";
+let positionOfKing = theString.indexOf("King");
 console.log(positionOfKing);
 
 // e) Replace "King" with "Emperor". 
 console.log("\nanswer 8 e"); 
-var aString = "Javascript is the King of the web.";
-var updatedString = aString.replace("King", "Emperor");
+let aString = "Javascript is the King of the web.";
+let updatedString = aString.replace("King", "Emperor");
 console.log(updatedString);
 
 // f) Insert the string "new” before the word "King". 
 console.log("\nanswer 8 f"); 
-var stringA = "Javascript is the King of the web.";
-var updatedString1 = stringA.replace("King", "new King");
+let stringA = "Javascript is the King of the web.";
+let updatedString1 = stringA.replace("King", "new King");
 console.log(updatedString1); 
 
 // g) Get the words in string as an array. 
 console.log("\nanswer 8 g"); 
-var string2 = "Javascript is the King of the web.";
-var wordsArray = string2.split(" ");
+let string2 = "Javascript is the King of the web.";
+let wordsArray = string2.split(" ");
 console.log(wordsArray);
 
 // h) Extract and print the words "is the King" from string. 
 console.log("\nanswer 8 h"); 
-var string3 = "Javascript is the King of the web.";
-var extractedWords = string3.slice(11, 22);
+let string3 = "Javascript is the King of the web.";
+let extractedWords = string3.slice(11, 22);
 console.log(extractedWords); 
 
 // i) Get the count of occurrences of the strings "the" and "of" in string. 
 console.log("\nanswer 8 i"); 
-var string4 = "Javascript is the King of the web.";
-var countOfThe = (string4.match(/the/g) || []).length;
-var countOfOf = (string4.match(/of/g) || []).length;
-console.log(countOfThe); 
-console.log(countOfOf); 
+let string4 = "Javascript is the King of the web.";
+let countOfThe = (string4.match(/the/g) || []).length;
+let countOfOf = (string4.match(/of/g) || []).length;
+console.log("The-", countOfThe); 
+console.log("Of-", countOfOf); 
 
 // j) pad string with "*" and set the total length of the string as 30, displayed
 console.log("\nanswer 8 j"); 
-// at right side.
-var string5 = "Javascript is the King of the web.";
-var paddedString = string5.padEnd(30, "*");
+let string5 = "Javascript is the King of the web.";
+if (string5.length > 30) {
+    string5 = string5.substring(0, 29);
+}
+const paddedString = string5.padEnd(30, "*");
 console.log(paddedString); 
