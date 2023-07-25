@@ -60,7 +60,7 @@ document.getElementById("basicDetailsForm").addEventListener("submit", function(
     };
     const basicDetailsJSON = JSON.stringify(yourBasicDetails);
     document.cookie = `basicDetails=${encodeURIComponent(basicDetailsJSON)}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
-    alert("Basic details have been stored in cookies.");
+    alert("Stored in cookies.");
 });
 
 // 4. Redirect to the homepage of google from the console.
@@ -142,15 +142,15 @@ const buttonContainer = document.getElementById("buttonContainer");
 // 8. Create a form with a text field which when submitted, will change the tab title to whatever is entered, 
 // limit the field to 50 characters, otherwise show an error message, and stay on the same page when submitted
 // (it shouldn't refresh).
-document.getElementById("tabTitleForm").addEventListener("submit", function(event) {
+document.getElementById("titleChangeForm").addEventListener("submit", function(event) {
     event.preventDefault(); 
-    const tabTitleInput = document.getElementById("tabTitleInput");
-    const errorMessage = document.getElementById("errorMessage");
-    if (tabTitleInput.value.length > 50) {
-      errorMessage.style.display = "block";
+    const newTitle = document.getElementById("newTitle").value.trim();
+    if (newTitle.length === 0) {
+      alert("Enter a title.");
+    } else if (newTitle.length > 50) {
+      alert("Maximum 50 characters.");
     } else {
-      document.title = tabTitleInput.value;
-      errorMessage.style.display = "none"; 
+      document.title = newTitle;
     }
 });
 
