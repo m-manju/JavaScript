@@ -154,7 +154,7 @@ document.getElementById("titleChangeForm").addEventListener("submit", function(e
     }
 });
 
-// 9. When the control+enter key is pressed show an alert messag
+// 9. When the control+enter key is pressed show an alert message.
 document.addEventListener("keydown", (event) => {
     if (event.ctrlKey && event.key === "Enter") {
       alert("Hi, Good morning!");

@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-condition */
 // 1. ['car', 1, 5, 'js', 'node js', 'mysql', 'sql' ] : Use switch statement inside a map function and 
 // console each item by using switch statement.
 console.log("\nanswer 1");
@@ -170,3 +171,6 @@ if (string5.length > 30) {
 }
 const paddedString = string5.padEnd(30, "*");
 console.log(paddedString); 
+
+
+
