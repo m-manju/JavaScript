@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>fill the form</h3>
+    
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <span id="nameError" class="error-message"></span><br>
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" required>
+        <span id="phoneNumberError" class="error-message"></span><br>
+        <label for="place">Place:</label>
+        <input type="text" id="place" required>
+        <span id="placeError" class="error-message"></span><br>
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" required>
+        <span id="companyNameError" class="error-message"></span><br>
+        <label for="pinCode">Pin Code:</label>
+        <input type="text" id="pinCode" required>
+        <span id="pinCodeError" class="error-message"></span><br>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <button type="button" onclick="prepopulateForm()" id="prepopulateButton" disabled>Prepopulate</button>
+
+    <div id="content"></div>
+
+    <script src="javascript/script.js"></script>
+</body>
+</html>
