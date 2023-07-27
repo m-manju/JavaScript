@@ -30,11 +30,11 @@ function submitForm() {
     const placeField = document.getElementById('place');
     const companyNameField = document.getElementById('companyName');
     const pinCodeField = document.getElementById('pinCode');
-    const name = nameField.value.trim();
-    const phoneNumber = phoneNumberField.value.trim();
-    const place = placeField.value.trim();
-    const companyName = companyNameField.value.trim();
-    const pinCode = pinCodeField.value.trim();
+    const name = nameField.value;
+    const phoneNumber = phoneNumberField.value;
+    const place = placeField.value;
+    const companyName = companyNameField.value;
+    const pinCode = pinCodeField.value;
     if (!name) {
         showError(nameField, 'Name is required.');
     }
@@ -133,3 +133,4 @@ class TheClass {
 }
 console.log("Static Variable:", TheClass.staticVariable);
 console.log("Static Variable via method:", TheClass.getStaticVariable());
+
