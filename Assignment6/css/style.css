@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --winning-blocks: #2d2d2d
+}
+body{
+    background-color: #37505C;
+}
+h1{
+    color: aliceblue;
+}
+.container{
+    padding: 50px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#gameBoard{
+    width: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.box{
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+    font-size: 70px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+}
+.box:nth-child(3n){
+    border-right: none;
+}
+.box:nth-child(6) ~ .box{
+    border-bottom: none;
+}
+button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #7aa2b4;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+button:hover{
+    cursor: pointer;
+    transform: translateX(-3px);
+    background-color: #415b67;
+}
