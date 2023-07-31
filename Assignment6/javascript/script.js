@@ -19,7 +19,7 @@ function boxClicked(e) {
       let winningBlocks = playerHasWon(currentPlayer);
       winningBlocks.forEach(box => boxes[box].style.backgroundColor = "lightgreen");
       document.getElementById('heading').innerText = playerText;
-      boxes.forEach(box => box.removeEventListener('click', boxClicked)); // Disable further clicks after the game is won.
+      boxes.forEach(box => box.removeEventListener('click', boxClicked));
     } else if (!spaces.includes(null)) {
       document.getElementById('heading').innerText = "It's a draw!";
     }
