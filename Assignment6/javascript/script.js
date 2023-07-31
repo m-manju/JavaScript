@@ -62,7 +62,6 @@ function restart() {
   document.getElementById('heading').innerText = "Tic Tac Toe";
   currentPlayer = X_TEXT;
 
-  // Re-add click event listeners after restart
   boxes.forEach(box => box.addEventListener('click', boxClicked));
 }
 
