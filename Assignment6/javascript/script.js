@@ -15,11 +15,13 @@ function boxClicked(e) {
     e.target.innerText = currentPlayer;
 
     if (playerHasWon(currentPlayer)) {
+
       let heading = `${currentPlayer} has won!`;
       let winningBlocks = playerHasWon(currentPlayer);
       winningBlocks.forEach(box => boxes[box].style.backgroundColor = "lightgreen");
       document.getElementById('heading').innerText = heading;
       boxes.forEach(box => box.removeEventListener('click', boxClicked));
+
     } else if (!spaces.includes(null)) {
       document.getElementById('heading').innerText = "It's a draw!";
     }
@@ -66,3 +68,4 @@ function restart() {
 }
 
 startGame();
+
