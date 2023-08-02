@@ -1,0 +1,11 @@
+1. corrected path of script file in html.
+2. corrected id of image ('img' in to 'imgs').
+3. used '{}' with else.
+4. let & const used correctly.
+5. In second if- else if, changed conditions.
+     In if -> selectedIndex < 0
+     in else-if -> selectedIndex >= a.length
+6. Used single quotes in string.
+7. Changed syntax of concantation.
+8. Changed getElementsById in to getElementById.
+9. Insted of ./images used ./images/.
