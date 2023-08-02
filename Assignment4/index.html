@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h2>Fill the form</h2>
+  <form id="basicDetailsForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <h3>Click the Buttons</h3>
+  <div id="idDiv">
+    <div id="subDiv">
+      <p id="name"> Good morning</p>
+    </div>
+  </div>
+  <button onclick="changeBg()">Change Background</button>
+  <button onclick="divDetails()">Show/Hide Details</button>
+  <button onclick="hideDiv()">Hide Div</button>
+
+  <div id="languageDisplay"></div>
+  <div id="buttonContainer"></div>
+
+  <h2>Select a Number:</h2>
+  <select id="numberSelect">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  <div id="messageDiv"></div>
+
+  <h2>Fill the form</h2>
+  <form id="titleChangeForm">
+    <label for="newTitle">New Title:</label>
+    <input type="text" id="newTitle" maxlength="50" required>
+    <button type="submit">Change Title</button>
+  </form>
+
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>
