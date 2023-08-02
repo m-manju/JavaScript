@@ -8,6 +8,7 @@
 </head>
 <body>
   <h2>Fill the form</h2>
+  <!-- Clear the form on submit -->
   <form id="basicDetailsForm">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required><br><br>
@@ -19,12 +20,15 @@
   </form>
 
   <h3>Click the Buttons</h3>
+  <!-- what is the use of 2 div's. -->
   <div id="idDiv">
     <div id="subDiv">
       <p id="name"> Good morning</p>
     </div>
   </div>
+  <!-- Toggle the background colors -->
   <button onclick="changeBg()">Change Background</button>
+  <!-- show only one name at a time(instead of show / hide) -->
   <button onclick="divDetails()">Show/Hide Details</button>
   <button onclick="hideDiv()">Hide Div</button>
 
@@ -32,6 +36,7 @@
   <div id="buttonContainer"></div>
 
   <h2>Select a Number:</h2>
+    <!-- add the options dynamically -->
   <select id="numberSelect">
     <option value="1">1</option>
     <option value="2">2</option>
