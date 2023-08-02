@@ -35,6 +35,19 @@ console.log("\n",anArray);
 
 // 3.Use constructor method to console all elements of the passed array. (the array will be passed to the
 // constructor method)
+class books{
+    constructor(page){
+        this.page = page;
+        this.read()
+    }
+    read(){
+        this.page.forEach((element) => {
+            console.log(element);
+        });
+    }
+}
+const books1 = new books(["aaa","bbb","ccc","ddd"]);
+
 
 
 // 4.Create a function that takes 2 arguments, 1st argument being any array of items, 2nd being any one
@@ -78,7 +91,6 @@ console.log(revValues);
 // with id as 24 if it exists )
 
 const arrayObj = { data: [{a:'one', id:'22'}, {a:'four', id:'7'}, {a:'six', id:'2'},  {a:'sixty', id:'24'},  {a:'five', id:'212'}] };
-
 var m =arrayObj.data;
 console.log(m);
 let TheObject = m.findIndex((object) =>{
@@ -125,5 +137,7 @@ let result5 = newString.split(wordOf).length - 1;
 console.log("Of-",result5);
 
 // j) pad string with "*" and set the total length of the string as 30, displayed at right side.
-
-
+let lastString = newString.substring(0,29);
+console.log(lastString.padEnd(30,'*'));
+let newestString = lastString.padEnd(30,'*');
+console.log("total length:",newestString.length);
