@@ -48,20 +48,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // 3. Create a form and submit button, on click of the button 
 // store your basic details from the form in the cookies. 
-document.getElementById("basicDetailsForm").addEventListener("submit", function(event) {
-    event.preventDefault(); 
-    const name = document.getElementById("name").value;
-    const age = document.getElementById("age").value;
-    const email = document.getElementById("email").value;
-    const yourBasicDetails = {
-      name: name,
-      age: age,
-      email: email,
-    };
-    const basicDetailsJSON = JSON.stringify(yourBasicDetails);
-    document.cookie = `basicDetails=${encodeURIComponent(basicDetailsJSON)}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
-    alert("Stored in cookies.");
+// document.getElementById("basicDetailsForm").addEventListener("submit", function(event) {
+//     event.preventDefault(); 
+//     const name = document.getElementById("name").value;
+//     const age = document.getElementById("age").value;
+//     const email = document.getElementById("email").value;
+//     const yourBasicDetails = {
+//       name: name,
+//       age: age,
+//       email: email,
+//     };
+//     const basicDetailsJSON = JSON.stringify(yourBasicDetails);
+//     document.cookie = `basicDetails=${encodeURIComponent(basicDetailsJSON)}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
+//     alert("Stored in cookies.");
+// });
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  for (item of formData) {
+    console.log(item[0], item[1]);
+  }
+  const detailsForm = JSON.stringify(formData);
+  document.cookie =`basicDetails=${encodeURIComponent(detailsForm)}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
+  // what is the use of expires and encodeURIComponent.
+  // Expires is a attribute, this is using for setting expiry date and time. When it reaches the time it will 
+  // automaticaly remove the datas in the cookie.here I set long time period as the expiry date.
+  // encodeURIComponent is used ecode the URI components.It is a function in javascript. by using this it 
+  // prevents issues like breaking the URL structure.
+  alert("Stored in cookies.");
 });
+
+
 
 // 4. Redirect to the homepage of google from the console.
 // window.location.href = "https://www.google.com";
@@ -100,7 +118,7 @@ const numberSelect = document.getElementById("numberSelect");
     numberSelect.addEventListener("change", function() {
       const selectedValue = parseInt(numberSelect.value, 10);
       if (selectedValue === 9) {
-        numberSelect.value = "10";
+        numberSelect.value = 10;
         messageDiv.textContent = "9 is fully occupied, please select another number.";
       } else {
         messageDiv.textContent = `You selected ${selectedValue}.`;
