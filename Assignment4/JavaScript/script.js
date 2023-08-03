@@ -48,20 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // 3. Create a form and submit button, on click of the button 
 // store your basic details from the form in the cookies. 
-// document.getElementById("basicDetailsForm").addEventListener("submit", function(event) {
-//     event.preventDefault(); 
-//     const name = document.getElementById("name").value;
-//     const age = document.getElementById("age").value;
-//     const email = document.getElementById("email").value;
-//     const yourBasicDetails = {
-//       name: name,
-//       age: age,
-//       email: email,
-//     };
-//     const basicDetailsJSON = JSON.stringify(yourBasicDetails);
-//     document.cookie = `basicDetails=${encodeURIComponent(basicDetailsJSON)}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
-//     alert("Stored in cookies.");
-// });
+
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
