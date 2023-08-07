@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(234, 186, 186);
+}
+h1{
+    text-align: center;
+    margin-top: 50px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.GamePlace{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.boxes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    height: 450px;
+    width: 450px;
+    flex-wrap: wrap;
+}
+.box{
+    height: 150px;
+    width: 150px;
+    border: 2px solid black;
+    font-size: 50px;
+}
+button{
+    padding: 10px 25px;
+    margin-top: 30px;
+    background-color: pink;
+    border: 2px solid rgb(158, 146, 146);
+    color: rgb(158, 146, 146);
+}
+button:hover{
+    color: black;
+    background-color: rgb(215, 163, 187);
+}
