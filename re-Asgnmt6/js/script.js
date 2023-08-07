@@ -34,4 +34,17 @@ function theWinner(player) {
 }
 const winnerCombos = [[0, 1, 2], [3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[2, 4, 6]]; 
 
+const refreshButton = document.querySelector('.refreshBtn');
+refreshButton.addEventListener('click',refreshing);
+
+function refreshing() {
+    empty =Array(9).fill(null);
+    currentPlayer =textX;
+    document.querySelector('.heading').innerText = 'Tic Tac Toe';
+    boxes.forEach(box => {
+        box.innerText = "";
+        box.addEventListener('click',boxClicked);
+    });
+}
+
 gameStart();
