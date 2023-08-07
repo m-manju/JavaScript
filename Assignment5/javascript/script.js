@@ -12,76 +12,77 @@
 // Note: The page shouldn't refresh on submitting the form in any of the questions and show error messages 
 // below the appropriate fields only.
 
+
 function showError(inputElement, message) {
-    const errorSpan = inputElement.nextElementSibling;
-    errorSpan.textContent = message;
+  const errorSpan = inputElement.nextElementSibling;
+  errorSpan.textContent = message;
 }
 function clearErrors() {
-    const errorMessages = document.querySelectorAll('.error-message');
-    errorMessages.forEach(message => message.textContent = "");
+  const errorMessages = document.querySelectorAll(".error-message");
+  errorMessages.forEach((message) => (message.textContent = ""));
 }
 function isInteger(value) {
-    return /^\d+$/.test(value);
+  return /^\d+$/.test(value);
 }
 function submitForm() {
-    clearErrors();
-    const nameField = document.getElementById('name');
-    const phoneNumberField = document.getElementById('phoneNumber');
-    const placeField = document.getElementById('place');
-    const companyNameField = document.getElementById('companyName');
-    const pinCodeField = document.getElementById('pinCode');
-    const name = nameField.value;
-    const phoneNumber = phoneNumberField.value;
-    const place = placeField.value;
-    const companyName = companyNameField.value;
-    const pinCode = pinCodeField.value;
-    if (!name) {
-        showError(nameField, 'Name is required.');
-    }
-    if (!phoneNumber) {
-        showError(phoneNumberField, 'Phone Number is required.');
-    } else if (!isInteger(phoneNumber)) {
-        showError(phoneNumberField, 'Only numbers are allowed for Phone Number.');
-    } else if (phoneNumber.length !== 10) {
-        showError(phoneNumberField, 'Phone Number should be 10 digits long.');
-    }
-    if (!place) {
-        showError(placeField, 'Place is required.');
-    }
-    if (!companyName) {
-        showError(companyNameField, 'Company Name is required.');
-    }
-    if (!pinCode) {
-        showError(pinCodeField, 'Pin Code is required.');
-    } else if (!isInteger(pinCode)) {
-        showError(pinCodeField, 'Only numbers are allowed for Pin Code.');
-    }
-    if (name && phoneNumber && place && companyName && pinCode) {
-        const details = {
-            name: name,
-            phoneNumber: phoneNumber,
-            place: place,
-            companyName: companyName,
-            pinCode: pinCode
-        };
-        localStorage.setItem('formData', JSON.stringify(details));
-        document.getElementById('myForm').reset();
-        alert('Form submitted successfully!');
-    }
+  clearErrors();
+  const nameField = document.getElementById("name");
+  const phoneNumberField = document.getElementById("phoneNumber");
+  const placeField = document.getElementById("place");
+  const companyNameField = document.getElementById("companyName");
+  const pinCodeField = document.getElementById("pinCode");
+  const name = nameField.value;
+  const phoneNumber = phoneNumberField.value;
+  const place = placeField.value;
+  const companyName = companyNameField.value;
+  const pinCode = pinCodeField.value;
+  if (!name) {
+    showError(nameField, "Name is required.");
+  }
+  if (!phoneNumber) {
+    showError(phoneNumberField, "Phone Number is required.");
+  } else if (!isInteger(phoneNumber)) {
+    showError(phoneNumberField, "Only numbers are allowed for Phone Number.");
+  } else if (phoneNumber.length !== 10) {
+    showError(phoneNumberField, "Phone Number should be 10 digits long.");
+  }
+  if (!place) {
+    showError(placeField, "Place is required.");
+  }
+  if (!companyName) {
+    showError(companyNameField, "Company Name is required.");
+  }
+  if (!pinCode) {
+    showError(pinCodeField, "Pin Code is required.");
+  } else if (!isInteger(pinCode)) {
+    showError(pinCodeField, "Only numbers are allowed for Pin Code.");
+  }
+  if (name && phoneNumber && place && companyName && pinCode) {
+    const details = {
+      name: name,
+      phoneNumber: phoneNumber,
+      place: place,
+      companyName: companyName,
+      pinCode: pinCode,
+    };
+    localStorage.setItem("formData", JSON.stringify(details));
+    document.getElementById("myForm").reset();
+    alert("Form submitted successfully!");
+  }
 }
 function prepopulateForm() {
-    const formData = localStorage.getItem('formData');
-    if (formData) {
-        const details = JSON.parse(formData);
-        document.getElementById('name').value = details.name;
-        document.getElementById('phoneNumber').value = details.phoneNumber;
-        document.getElementById('place').value = details.place;
-        document.getElementById('companyName').value = details.companyName;
-        document.getElementById('pinCode').value = details.pinCode;
-    }
+  const formData = localStorage.getItem("formData");
+  if (formData) {
+    const details = JSON.parse(formData);
+    document.getElementById("name").value = details.name;
+    document.getElementById("phoneNumber").value = details.phoneNumber;
+    document.getElementById("place").value = details.place;
+    document.getElementById("companyName").value = details.companyName;
+    document.getElementById("pinCode").value = details.pinCode;
+  }
 }
-document.getElementById('prepopulateButton').disabled = localStorage.getItem('formData') === null;
-
+document.getElementById("prepopulateButton").disabled =
+  localStorage.getItem("formData") === null;
 
 // 2. Create a button and div using JS, when clicked on the button your basic details should be shown in the div. 
 // The static HTML file should only contain the basic HTML structure, no div/buttons.
