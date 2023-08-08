@@ -4,32 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h3>fill the form</h3>
-    
-    <form id="myForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name"> <br>
-        <span id="nameError" class="error-message"></span><br>
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="text" id="phoneNumber"><br>
-        <span id="phoneNumberError" class="error-message"></span><br>
-        <label for="place">Place:</label>
-        <input type="text" id="place"><br>
-        <span id="placeError" class="error-message"></span><br>
-        <label for="companyName">Company Name:</label>
-        <input type="text" id="companyName"><br>
-        <span id="companyNameError" class="error-message"></span><br>
-        <label for="pinCode">Pin Code:</label>
-        <input type="text" id="pinCode"><br>
-        <span id="pinCodeError" class="error-message"></span><br>
-        <button type="button" onclick="submitForm()">Submit</button><br>
-    </form><br>
-    
-    <button type="button" onclick="prepopulateForm()" id="prepopulateButton" disabled>Prepopulate</button><br><br>
+    <div class="container">
+        <form id="myForm">
+            <h1>Registration</h1>
+      
+            <label for="name" >Name:</label>
+            <input type="text" id="name" required> <br>
+            <span id="nameError" class="error-message"></span><br>
 
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" required><br>
+            <span id="phoneNumberError" class="error-message"></span><br>
+
+            <label for="place">Place:</label>
+            <input type="text" id="place"><br>
+            <span id="placeError" class="error-message"></span><br>
+
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName"><br>
+            <span id="companyNameError" class="error-message"></span><br>
+
+            <label for="pinCode">Pin Code:</label>
+            <input type="text" id="pinCode"><br>
+            <span id="pinCodeError" class="error-message"></span><br>
+
+            <button type="button" onclick="submitForm()">Submit</button><br>
+            <button type="button" onclick="prepopulateForm()" id="prepopulateButton" disabled>Prepopulate</button><br><br>
+        </form><br>
+        
+    </div>
+    
     <div id="content"></div>
 
     <script src="javascript/script.js"></script>

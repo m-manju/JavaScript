@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(95, 95, 124);
+}
+#myForm {
+    width: 300px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    font-size: 12px;
+}
+#myForm h1 {
+    color: #0f2027;
+    text-align: center;
+}
+#myForm button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    color: white;
+    background-color: rgb(41, 57, 194);
+    border: none;
+    border-radius: 4px;
+}
+label{
+    font-size: 15px;
+}
+input {
+    border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-size: 12px;
+	padding: 10px;
+	width: 93%;
+}
+#myForm button:hover {
+    background-color: rgb(67, 77, 166);
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: block;
+}

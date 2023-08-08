@@ -12,18 +12,19 @@
 // Note: The page shouldn't refresh on submitting the form in any of the questions and show error messages 
 // below the appropriate fields only.
 
-
-function showError(inputElement, message) {
-  const errorSpan = inputElement.nextElementSibling;
-  errorSpan.textContent = message;
+function showError(inputElement, errorMessageElement, message) {
+  errorMessageElement.textContent = message;
 }
+
 function clearErrors() {
   const errorMessages = document.querySelectorAll(".error-message");
   errorMessages.forEach((message) => (message.textContent = ""));
 }
+
 function isInteger(value) {
   return /^\d+$/.test(value);
 }
+
 function submitForm() {
   clearErrors();
   const nameField = document.getElementById("name");
@@ -31,33 +32,52 @@ function submitForm() {
   const placeField = document.getElementById("place");
   const companyNameField = document.getElementById("companyName");
   const pinCodeField = document.getElementById("pinCode");
-  const name = nameField.value;
-  const phoneNumber = phoneNumberField.value;
-  const place = placeField.value;
-  const companyName = companyNameField.value;
-  const pinCode = pinCodeField.value;
+  
+  const nameError = document.getElementById("nameError");
+  const phoneError = document.getElementById("phoneNumberError");
+  const placeError = document.getElementById("placeError");
+  const companyError = document.getElementById("companyNameError");
+  const pinError = document.getElementById("pinCodeError");
+
+  const name = nameField.value.trim();
+  const phoneNumber = phoneNumberField.value.trim();
+  const place = placeField.value.trim();
+  const companyName = companyNameField.value.trim();
+  const pinCode = pinCodeField.value.trim();
+
+  let isValid = true;
+
   if (!name) {
-    showError(nameField, "Name is required.");
+    showError(nameField, nameError, "Name is required.");
+    isValid = false;
   }
   if (!phoneNumber) {
-    showError(phoneNumberField, "Phone Number is required.");
+    showError(phoneNumberField, phoneError, "Phone Number is required.");
+    isValid = false;
   } else if (!isInteger(phoneNumber)) {
-    showError(phoneNumberField, "Only numbers are allowed for Phone Number.");
+    showError(phoneNumberField, phoneError, "Only numbers are allowed for Phone Number.");
+    isValid = false;
   } else if (phoneNumber.length !== 10) {
-    showError(phoneNumberField, "Phone Number should be 10 digits long.");
+    showError(phoneNumberField, phoneError, "Phone Number should be 10 digits long.");
+    isValid = false;
   }
   if (!place) {
-    showError(placeField, "Place is required.");
+    showError(placeField, placeError, "Place is required.");
+    isValid = false;
   }
   if (!companyName) {
-    showError(companyNameField, "Company Name is required.");
+    showError(companyNameField, companyError, "Company Name is required.");
+    isValid = false;
   }
   if (!pinCode) {
-    showError(pinCodeField, "Pin Code is required.");
+    showError(pinCodeField, pinError, "Pin Code is required.");
+    isValid = false;
   } else if (!isInteger(pinCode)) {
-    showError(pinCodeField, "Only numbers are allowed for Pin Code.");
+    showError(pinCodeField, pinError, "Only numbers are allowed for Pin Code.");
+    isValid = false;
   }
-  if (name && phoneNumber && place && companyName && pinCode) {
+
+  if (isValid) {
     const details = {
       name: name,
       phoneNumber: phoneNumber,
@@ -70,6 +90,7 @@ function submitForm() {
     alert("Form submitted successfully!");
   }
 }
+
 function prepopulateForm() {
   const formData = localStorage.getItem("formData");
   if (formData) {
@@ -84,16 +105,19 @@ function prepopulateForm() {
 document.getElementById("prepopulateButton").disabled =
   localStorage.getItem("formData") === null;
 
+
+
 // 2. Create a button and div using JS, when clicked on the button your basic details should be shown in the div. 
 // The static HTML file should only contain the basic HTML structure, no div/buttons.
 // Function to display basic details
+
 function displayBasicDetails() {
     var detailsDiv = document.getElementById('content');
     var name = "Manju M";
     var age = 22;
     var occupation = "Software Engineer Trainee";
-    var detailsText = "Name: " + name 
-                      "Age: " + age 
+    var detailsText = "Name: " + name + "<br>" +
+                      "Age: " + age + "<br>" +
                       "Occupation: " + occupation;
     detailsDiv.innerHTML = detailsText;
 }
