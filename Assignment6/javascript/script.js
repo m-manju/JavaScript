@@ -1,6 +1,9 @@
-const O_TEXT = "O";
-const X_TEXT = "X";
-let currentPlayer = X_TEXT;
+function getInputValue(){
+  
+const player2 = document.getElementById('player1').value;
+const player1 = document.getElementById('player2').value;
+console.log(player1);
+let currentPlayer = player1;
 let spaces = Array(9).fill(null);
 const boxes = Array.from(document.getElementsByClassName("box"));
 
@@ -26,7 +29,7 @@ function boxClicked(e) {
       document.getElementById('heading').innerText = "It's a draw!";
     }
 
-    currentPlayer = currentPlayer === X_TEXT ? O_TEXT : X_TEXT;
+    currentPlayer = currentPlayer === player1 ? player2 : player1;
   }
 }
 
@@ -62,10 +65,13 @@ function restart() {
   });
 
   document.getElementById('heading').innerText = "Tic Tac Toe";
-  currentPlayer = X_TEXT;
+  currentPlayer = player1;
 
   boxes.forEach(box => box.addEventListener('click', boxClicked));
 }
 
 startGame();
 
+
+
+}
