@@ -43,7 +43,7 @@ h1{
 .box:nth-child(6) ~ .box{
     border-bottom: none;
 }
-button{
+#restartBtn{
     padding: 10px 20px;
     border-radius: 10px;
     background-color: #7aa2b4;
@@ -55,4 +55,19 @@ button:hover{
     cursor: pointer;
     transform: translateX(-3px);
     background-color: #415b67;
+}
+.largeContainer{
+    display: flex;
+
+}
+input{
+    width: 150px;
+    height: 30px;   
+}
+.submitBtn{
+    width: 100px;
+    height: 30px;
+    margin: 25px;
+    background-color: #7aa2b4;
+    border-radius: 5px;
 }
