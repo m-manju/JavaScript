@@ -36,7 +36,7 @@ function submitForm() {
     const companyName = companyNameField.value;
     const pinCode = pinCodeField.value;
     if (!name) {
-        showError(nameField, 'Name is required.');
+        showError(nameField,'Name is required.');
     }
     if (!phoneNumber) {
         showError(phoneNumberField, 'Phone Number is required.');
