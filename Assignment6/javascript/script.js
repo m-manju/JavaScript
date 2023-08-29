@@ -1,7 +1,7 @@
 function getInputValue(){
   
-const player2 = document.getElementById('player1').value;
-const player1 = document.getElementById('player2').value;
+let player1 = document.getElementById('player1').value;
+let player2 = document.getElementById('player2').value;
 console.log(player1);
 let currentPlayer = player1;
 let spaces = Array(9).fill(null);
